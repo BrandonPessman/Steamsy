@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend": "nodemon server.js",
+    "frontend": "npm start --prefix ../frontend/",
+    "full": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "circular-json": "^0.5.9",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
+    "getenv": "^0.7.0",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.12",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "author": "",
+  "license": "ISC"
+}
