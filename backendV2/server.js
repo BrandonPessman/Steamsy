@@ -1,4 +1,5 @@
 const express = require('express')
+var cors = require('cors')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 
@@ -12,6 +13,9 @@ const gamesRoutes = require('./routes/games')
 const adminRoutes = require('./routes/admin')
 
 const mongodb = require('./scripts/mongoUtil')
+
+// Sets up CORS
+app.use(cors())
 
 // Allows Parsing of Bodys
 app.use(bodyParser.json())

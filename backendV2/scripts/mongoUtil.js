@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
+const GamesListUtil = require('./gamesListUtil.js')
 
 const dbRoute =
   'mongodb+srv://' +
@@ -18,7 +19,12 @@ module.exports = {
     db = mongoose.connection
 
     // Once Connected to MongoDB, Print this
-    db.once('open', () => console.log('connected to the database'))
+    db.once('open', () => {
+      console.log('connected to the database')
+
+      // Update Local Memory of Games
+      GamesListUtil.updateListOfGames(db)
+    })
 
     // If there is an error, Print this
     db.on('error', console.error.bind(console, 'MongoDB connection error:'))
