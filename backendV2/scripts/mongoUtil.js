@@ -13,7 +13,7 @@ const dbRoute =
 var db
 
 module.exports = {
-  connectToMongoDB() {
+  connectToMongoDB: function() {
     // Connects Backend to MongoDB
     mongoose.connect(dbRoute, { useNewUrlParser: true })
     db = mongoose.connection
@@ -28,9 +28,10 @@ module.exports = {
 
     // If there is an error, Print this
     db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+    return db
   },
 
-  getDatabase() {
+  getDatabase: function() {
     return db
   },
 }

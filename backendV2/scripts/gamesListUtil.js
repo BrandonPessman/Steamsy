@@ -1,7 +1,7 @@
 var listOfGames
-
+var databaseUpdates = require('./databaseUpdates')
 module.exports = {
-  updateListOfGames(db) {
+  updateListOfGames: function(db) {
     db.collection('games')
       .find({})
       .toArray(function(err, result) {
@@ -11,7 +11,7 @@ module.exports = {
       })
   },
 
-  getListOfGames() {
+  getListOfGames: function() {
     return listOfGames
   },
 }
