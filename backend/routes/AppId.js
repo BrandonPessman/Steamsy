@@ -6,7 +6,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-  // Logic for finding specific Appid if we have it, otherwise bad request
   res.send()
 })
 
